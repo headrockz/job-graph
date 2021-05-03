@@ -1,3 +1,6 @@
+from time import sleep
+
+
 def call_graph(choice='matriz'):
     if choice == 'matriz':
         #  chama  matriz
@@ -49,6 +52,7 @@ escolha um grafo: ''')
         # graph = graph5
         print('grafo 5')
 
+    sleep(0.5)
     print('\n')
     viewGraph = input('''Visualizar grafo?
 [1] Matrix de adjacencia
@@ -81,6 +85,8 @@ Digite sua escolha: ''')
         else:
             print('Volte sempre!')
             break
+
+        sleep(2)
 
 
 select_graphs()
