@@ -1,0 +1,6 @@
+venv/
+.vscode/
+.mypy_cache
+bin/
+*.class
+.Rhistory
