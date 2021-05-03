@@ -15,15 +15,15 @@ import csv
 
 # --- Matriz de adjacências
 # Abre matriz de adjacencia sem rotulos
-K5 = pd.read_csv("K5.csv", sep=';', header=None, engine='python')
+K5 = pd.read_csv("assets/K5.csv", sep=';', header=None, engine='python')
 # K5
 
 # Abre matriz de adjacencia com rotulos
-n3e2 = pd.read_csv("n3e2.csv", sep=';', header=0, engine='python')
+n3e2 = pd.read_csv("assets/n3e2.csv", sep=';', header=0, engine='python')
 # n3e2
 
 # Abre matriz de adjacencia com rotulos
-n4e5 = pd.read_csv("n4e5.csv", sep=';', header=0, engine='python')
+n4e5 = pd.read_csv("assets/n4e5.csv", sep=';', header=0, engine='python')
 # n4e5
 
 # --- Implementacoes basicas
@@ -34,9 +34,11 @@ print("Numero de vertices:", numeroVertices)
 
 
 numeroArestas = (K5.sum(axis=0).sum() / 2)
-print("Numero de arestas:", numeroArestas)
+print("Numero de arestas:", int(numeroArestas))
 
 
 grausVertices = K5.sum(axis=0)
 print("Graus dos vertices:", np.array(grausVertices))
 
+for i in np.array(grausVertices):
+    if i % 2 == 0:
