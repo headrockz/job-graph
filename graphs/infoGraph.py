@@ -1,19 +1,14 @@
 import numpy as np
-import pandas as pd
 
 
 class InfoGraph:
     def __init__(self, graph):
         self.graph = graph
-        #Mostrando o grafo
+        
         self.printGraph()
-        #Quantidade de Vertices
         self.numVertice()
-        #Quantidade de arestas
         self.numArrest()
-        #Grau de cada vertice
         self.numDegree()
-        #Verifica se o grafo é euleriano ou unicursal
         self.graphEuleriano()
 
     # Imprime o grafo
@@ -39,22 +34,18 @@ class InfoGraph:
     #Verifica se o grafo é euleriano ou unicursal
     def graphEuleriano(self):
         degree = self.graph.sum(axis=0)
-        euler = unicursal = 0
+        cont = 0
 
         for d in degree:
-            if d % 2 == 0:
-                euler += 1
-            else:
-                unicursal += 1
+            if d % 2 != 0:
+                cont += 1
 
-        if euler == len(degree):
+        if cont == 0:
             print('O grafo é Euleriano')
-        elif unicursal == 2:
+        elif cont == 2:
             print('O grafo é Unicursal')
         else:
             print('O grafo não é Euleriano nem Unicursal')
-
-
 
 
 #Verifica se o grafo possui mais de um componentes
