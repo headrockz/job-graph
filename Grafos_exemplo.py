@@ -40,5 +40,3 @@ print("Numero de arestas:", int(numeroArestas))
 grausVertices = K5.sum(axis=0)
 print("Graus dos vertices:", np.array(grausVertices))
 
-for i in np.array(grausVertices):
-    if i % 2 == 0:

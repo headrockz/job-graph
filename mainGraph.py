@@ -1,9 +1,10 @@
 from time import sleep
 import pandas as pd
-import numpy as np
+# import numpy as np
+from graphs.infoGraph import InfoGraph
 
 
-graph = pd.read_csv("assets/K5.csv", sep=';', header=None, engine='python')
+graph = pd.read_csv("assets/n3e2.csv", sep=';', header=0, engine='python')
 
 
 def call_graph(choice):
@@ -32,21 +33,11 @@ def call_view(choice):
 
     if choice == '1':
         #Mostrando A matriz
-        print('Matriz de Adjacências\n')
-        print(graph)
-        print('')
+        massage('Matriz de Adjacências')
+
+        #Mostrando informações sobre o grafo    
+        infos = InfoGraph(graph)
         
-        #Numero de vertices
-        numeroVertices = len(graph)
-        print("Numero de vertices:", numeroVertices)
-
-        #Numero de arestas
-        numeroArestas = (graph.sum(axis=0).sum() / 2)
-        print("Numero de arestas:", int(numeroArestas))
-
-        #Grau de cada vertice
-        grausVertices = graph.sum(axis=0)
-        print("Graus dos vertices:", np.array(grausVertices))
 
     elif choice == '2':
         # chama lista
@@ -77,7 +68,7 @@ def call_alg(alg):
 
 
 def massage(msg):
-    #Função para Formatar uma mensagem
+    #Função para formatar uma mensagem
     print('=' * 50)
     print(f"{msg:^50}")
     print('=' * 50)
@@ -102,18 +93,19 @@ Digite sua escolha: ''')
     massage('Visualizar grafo?')
 
     viewGraph = input('''
-[1] Matriz
+[1] Matriz de Adjacência
 [2] lista
 [0/N] Não visualizar
 Digite sua escolha: ''')
 
     call_view(viewGraph)
 
-    input('Pressione enter para escolher um dos algoritmos!')
+    input('\nPressione enter para escolher um dos algoritmos!')
 
     while True:
         print('\n')
         massage('Eschola um Algoritmo')
+        # precisa trocar para os nomes dos algoritmos
         alg = input('''
 [1] algortimo 1
 [2] algoritmo 2
@@ -122,7 +114,6 @@ Digite sua escolha: ''')
 [5] algortimo 5
 [0/N] Para sair
 Digite sua escolha: ''')
-        # precisa trocar para os nomes dos algoritmos
         call_alg(alg)
         
         if alg == '0' or alg.lower() == 'n':
