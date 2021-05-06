@@ -35,7 +35,7 @@ class HeapMaximum:
                 self.listHeap[father - 1], self.listHeap[child - 1] = self.listHeap[child - 1], self.listHeap[father - 1]
                 child = father
 
-    def removeNode(self):
+    def remove_node(self):
         # Store temporary root node
         aux = self.listHeap[0]
 
@@ -76,7 +76,7 @@ class HeapMaximum:
     def view_heap(self):
         #print(self.listHeap)
 
-        print('The structure heap')
+        print('A estrutura heap é:')
 
         # Identifying amount of nodes
         level = int(math.log(self.nodes, 2))
@@ -88,10 +88,10 @@ class HeapMaximum:
                 print(f'{self.listHeap[aux]}', end=' ')
                 aux = aux + 1
             print('')
+
         for i in range(self.nodes - aux):
             print(f'{self.listHeap[aux]}', end=' ')
             aux = aux + 1
-        print('')
 
     #Mostra a raiz da arvore
     def root(self):

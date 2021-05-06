@@ -29,13 +29,13 @@ def call_alg(alg, graph):
         print('mostrando algoritmo 1')
     elif alg == '2':
         # chama algoritmo
-        print('mostrando algoritmo 1')
+        print('mostrando algoritmo 2')
     elif alg == '3':
         # chama algoritmo
         print('mostrando algoritmo 3')
     elif alg == '4':
         # chama algoritmo
-        print('mostrando algoritmo 1')
+        print('mostrando algoritmo 4')
     elif alg == '5':
         # chama algoritmo
         print('mostrando algoritmo 5')
@@ -96,7 +96,7 @@ Digite sua escolha: ''')
 
     while True:
         print('\n')
-        massage('Escola um Algoritmo')
+        massage('Escolha um Algoritmo')
         # precisa trocar para os nomes dos algoritmos
         alg = input('''
 [1] algortimo 1

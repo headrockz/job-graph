@@ -1,4 +1,4 @@
-from heapMinimum import HeapMinimum
+from .heapMinimum import HeapMinimum
 
 
 class AlgDijkstra:
@@ -40,21 +40,22 @@ class AlgDijkstra:
         return f'O melhor caminho é: \n{result}'
 
 
-grafo = AlgDijkstra(7)
+if __name__ == '__main__':
+    grafo = AlgDijkstra(7)
 
-grafo.add_egde(1, 2, 5)
-grafo.add_egde(1, 3, 6)
-grafo.add_egde(1, 4, 10)
-grafo.add_egde(2, 5, 13)
-grafo.add_egde(3, 4, 3)
-grafo.add_egde(3, 5, 11)
-grafo.add_egde(3, 6, 6)
-grafo.add_egde(4, 5, 6)
-grafo.add_egde(4, 6, 4)
-grafo.add_egde(5, 7, 3)
-grafo.add_egde(6, 7, 8)
+    grafo.add_egde(1, 2, 5)
+    grafo.add_egde(1, 3, 6)
+    grafo.add_egde(1, 4, 10)
+    grafo.add_egde(2, 5, 13)
+    grafo.add_egde(3, 4, 3)
+    grafo.add_egde(3, 5, 11)
+    grafo.add_egde(3, 6, 6)
+    grafo.add_egde(4, 5, 6)
+    grafo.add_egde(4, 6, 4)
+    grafo.add_egde(5, 7, 3)
+    grafo.add_egde(6, 7, 8)
 
-grafo.view_disjktra()
+    grafo.view_disjktra()
 
-result = grafo.disjktra(1)
-print(f'\n{result}')
+    result = grafo.disjktra(1)
+    print(f'\n{result}')
