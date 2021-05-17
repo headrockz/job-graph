@@ -4,55 +4,50 @@ import pandas as pd
 from graphs.infoGraph import InfoGraph
 
 
+# Função para escolher a visualização da matriz ou lista
 def call_view(choice, graph):
-    #Função para escolher a visualização da matriz ou lista
     print('')
 
     if choice == '1':
-        #Mostrando A matriz
         massage('Matriz de Adjacências')
-
-        #Mostrando informações sobre o grafo    
+        # Mostrando informações sobre o grafo    
         InfoGraph(graph)
-        
-
     elif choice == '2':
         # chama lista
         print('mostrando a lista')
 
 
 
+# Função para escolher o algoritmo
 def call_alg(alg, graph):
-    #Função para escolher o algoritmo
     if alg == '1':
-        # chama algoritmo
+        # chama algoritmo(graph)
         print('mostrando algoritmo 1')
     elif alg == '2':
-        # chama algoritmo
+        # chama algoritmo(graph)
         print('mostrando algoritmo 2')
     elif alg == '3':
-        # chama algoritmo
+        # chama algoritmo(graph)
         print('mostrando algoritmo 3')
     elif alg == '4':
-        # chama algoritmo
+        # chama algoritmo(graph)
         print('mostrando algoritmo 4')
     elif alg == '5':
-        # chama algoritmo
+        # chama algoritmo(graph)
         print('mostrando algoritmo 5')
     else:
         print('')
-        massage('Volte sempre!')
 
 
+# Função para formatar uma mensagem
 def massage(msg):
-    #Função para formatar uma mensagem
     print('=' * 50)
     print(f"{msg:^50}")
     print('=' * 50)
 
 
+# Função principal
 def main():
-    #Função principal
     massage('Escolha um Grafo')
     choice = input('''
 [1] Grafo 1 - K5
@@ -62,7 +57,6 @@ def main():
 [5] Grafo 5 -
 Digite sua escolha: ''')
 
-    #Função para escholer o grafo
     if choice == '1':
         graph = pd.read_csv("assets/K5.csv", sep=';', header=0, engine='python')
     elif choice == '2':
@@ -77,7 +71,6 @@ Digite sua escolha: ''')
         # graph = graph5
         print('grafo 5')
     
-    #Função para o algoritmo "dormir" por um tempo
     sleep(0.5)
 
     print('')
@@ -110,6 +103,7 @@ Digite sua escolha: ''')
         call_alg(alg, graph)
         
         if alg == '0' or alg.lower() == 'n':
+            massage('Volte sempre!')
             break
 
         sleep(1)

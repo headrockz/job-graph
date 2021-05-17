@@ -21,7 +21,6 @@ class Node:
         return self.childrenRight
 
 class BinaryTreeSearch:
-
     def __init__(self):
         self.root = None
 
@@ -31,13 +30,13 @@ class BinaryTreeSearch:
     def insert(self, value):
         print('Entrou no insert')
         no = Node(value)
-        if self.root == None:
+        if self.root is None:
             self.root = no
         else:
             nodeFather = None
             nodeCurrent = self.root
             while True:
-                if nodeCurrent != None:
+                if nodeCurrent is not None:
                     nodeFather = nodeCurrent
                     if no.getValue() < nodeCurrent.getValue():
                         nodeCurrent = nodeCurrent.getChildrenLeft()
@@ -48,9 +47,10 @@ class BinaryTreeSearch:
                         nodeFather.setChildrenLeft()
                     else:
                         nodeFather.setChildrenRight(no)
+                        break
 
     def previewTree(self, nodeCurrent): # Percurso em ordem simétrica
-        if nodeCurrent != None:
+        if nodeCurrent is not None:
             self.previewTree(nodeCurrent.getChildrenLeft())
             print(f'{nodeCurrent.getValue()}', end=' ')
             self.previewTree(nodeCurrent.getChildrenRight())
@@ -60,6 +60,5 @@ t = BinaryTreeSearch()
 
 t.insert(8)
 t.insert(10)
-
 
 t.previewTree(t.getRoot())

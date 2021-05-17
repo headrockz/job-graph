@@ -74,8 +74,14 @@ class HeapMinimum:
 
         return aux
 
+    def root(self):
+        print(f'O Nó raiz é {self.listHeap[0]}')
+
+    def size(self):
+        return self.nodes
+
     def view_heap(self):
-        #print(self.listHeap)
+        # print(self.listHeap)
 
         print('A estrutura heap é:')
 
@@ -93,10 +99,3 @@ class HeapMinimum:
             print(f'{self.listHeap[aux]}', end=' ')
             aux = aux + 1
         print('')
-
-        #Mostra a raiz da arvore
-    def root(self):
-        print(f'O Nó raiz é {self.listHeap[0]}')
-        
-    def size(self):
-        return self.nodes

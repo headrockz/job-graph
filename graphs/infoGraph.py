@@ -5,34 +5,33 @@ class InfoGraph:
     def __init__(self, graph):
         self.graph = graph
         
-        self.printGraph()
-        self.numVertice()
-        self.numArrest()
-        self.numDegree()
-        self.graphEuleriano()
+        print(self.printGraph())
+        print(f"Numero de vertices: {self.numVertice()}")
+        print(f"Numero de arestas: {self.numEdge()}")
+        print(f"Graus dos vertices: {self.numDegree()}")
+        print(self.graphEuler())
 
     # Imprime o grafo
     def printGraph(self):
-        print(self.graph)
-        print('')
+        return f'{self.graph}\n'
 
     # Numero de arestas
-    def numArrest(self):
-        arrest = (self.graph.sum(axis=0).sum() / 2)
-        print(f"Numero de arestas: {arrest}")
+    def numEdge(self):
+        edge = (self.graph.sum(axis=0).sum() / 2)
+        return edge
 
     # Numero de vertices
     def numVertice(self):
         vertice = len(self.graph)
-        print(f"Numero de vertices: {vertice}")
+        return vertice
 
     # Grau de cada vertice
     def numDegree(self):
         degree = self.graph.sum(axis=0)
-        print(f"Graus dos vertices: {np.array(degree)}")
+        return np.array(degree)
 
-    #Verifica se o grafo é euleriano ou unicursal
-    def graphEuleriano(self):
+    # Verifica se o grafo é euleriano ou unicursal
+    def graphEuler(self):
         degree = self.graph.sum(axis=0)
         cont = 0
 
@@ -41,14 +40,14 @@ class InfoGraph:
                 cont += 1
 
         if cont == 0:
-            print('O grafo é Euleriano')
+            return 'O grafo é Euleriano'
         elif cont == 2:
-            print('O grafo é Unicursal')
+            return 'O grafo é Unicursal'
         else:
-            print('O grafo não é Euleriano nem Unicursal')
+            return 'O grafo não é Euleriano nem Unicursal'
 
 
-#Verifica se o grafo possui mais de um componentes
+# Verifica se o grafo possui mais de um componentes
 # if componentes == 0:
 #     print('Grafo possui apenas um componente')
 # elif componentes > 0:

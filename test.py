@@ -1,20 +1,26 @@
-import pandas as pd
-import numpy as np
+grafo = {
+    'a': ['b', 'd', 'e'],
+    'b': ['a', 'c', 'e'],
+    'c': ['b', 'e'],
+    'd': ['a', 'e'],
+    'e': ['a', 'b', 'c', 'd', 'f'],
+    'f': ['e']
+}
 
+def dfs(grafo, vertice):
+    visitados = set()
 
-matrix = pd.read_csv("assets/K5.csv", sep=';', header=None, engine='python')
-numeroVertices = len(matrix)
+    def dfs_iterativa(grafo, vertice_fonte):
+        visitados.add(vertice_fonte)
+        falta_visitar = [vertice_fonte]
+        while falta_visitar:
+            vertice = falta_visitar.pop()
+            for vizinho in grafo[vertice]:
+                if vizinho not in visitados:
+                    print(vizinho)
+                    visitados.add(vizinho)
+                    falta_visitar.append(vizinho)
 
+    dfs_iterativa(grafo, vertice)
 
-class Graph:
-    def __init__(self, vertices, matrix):
-        self.vertices = vertices
-        self.matrix = matrix
-    
-    def imprime(self):
-        print(self.vertices)
-        print(self.matrix)
-
-
-graph = Graph(numeroVertices, matrix)
-graph.imprime()
+dfs(grafo, 'b')

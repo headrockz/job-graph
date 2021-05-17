@@ -1,10 +1,10 @@
 grafo = {
-    'a': ['b', 'd', 'e'],
-    'b': ['a', 'c', 'e'],
-    'c': ['b', 'e'],
-    'd': ['a', 'e'],
-    'e': ['a', 'b', 'c', 'd', 'f'],
-    'f': ['e']
+    1: [2, 4, 5],
+    2: [1, 3, 5],
+    3: [2, 5],
+    4: [1, 5],
+    5: [1, 2, 3, 4, 6],
+    6: [5]
 }
 
 # coisos globais
@@ -90,4 +90,4 @@ def call_to_busca_em_profundidade(grafo, vertice_do_grafo, nivel):
     return count_filhos
 
 
-busca_em_profundidade(grafo, 'a')
+busca_em_profundidade(grafo, 1)
