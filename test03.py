@@ -7,17 +7,17 @@ from graphs.infoGraph import InfoGraph
 
 
 def openListHeap():
-    response = gm.with_weight
+    response = pd.read_csv("assets/Kpeso.csv", sep=';', header=0, engine='python')
     newHeapMaximum = HeapMaximum()
-    InfoGraph(response)
+    
+    lista = response.values
+    for i in lista:
+        for j in i:
+            newHeapMaximum.add_nodes(j)
 
-    # for i in response:
-    #     for j in i:
-    #         newHeapMaximum.add_nodes(j)
-
-    # newHeapMaximum.view_heap()
-    # removeElement = newHeapMaximum.removeNode()
-    # print(f'The element removed was: {removeElement}')
+    newHeapMaximum.view_heap()
+    removeElement = newHeapMaximum.remove_node()
+    print(f'\nThe element removed was: {removeElement}')
     # newHeapMaximum.previewListHeapMaximun()
 
     # print('Dijkstra')

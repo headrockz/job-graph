@@ -34,7 +34,7 @@ class AlgDijkstra:
             distance, vertice = heapMinimum.remove_node()
             for i in range(self.vertices):
                 if self.graph[vertice - 1][i] != 0:
-                    if result[i][0] == -1 or result[i][0] > distance + self.graph[vertice - 1][i]:
+                    if (result[i][0] == -1) or (result[i][0] > distance + self.graph[vertice - 1][i]):
                         result[i] = [distance + self.graph[vertice - 1][i], vertice]
                         heapMinimum.add_nodes(distance + self.graph[vertice - 1][i], i + 1)
         return f'O melhor caminho é: \n{result}'

@@ -80,10 +80,28 @@ class HeapMinimum:
     def size(self):
         return self.nodes
 
-    def view_heap(self):
-        # print(self.listHeap)
+    def less_element(self):
+        if self.nodes != 0:
+            return self.listHeap[0]
+        return 'A árvore está vazia'
 
+    def left_child(self, u):
+        if self.nodes >= 2*u:
+            return self.listHeap[2*u-1]
+        return 'Esse nó não tem filho'
+
+    def right_child(self, u):
+        if self.nodes >= 2*u+1:
+            return self.listHeap[2*u]
+        return 'Esse nó não tem filho da direita'
+
+    def pai(self, u):
+        return self.heap[u // 2]
+
+    def view_heap(self):
         print('A estrutura heap é:')
+        
+        # print(self.listHeap)
 
         # Identifying amount of nodes
         level = int(math.log(self.nodes, 2))
