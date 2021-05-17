@@ -7,7 +7,7 @@ class InfoGraph:
         
         print(self.printGraph())
         print(f"Numero de vertices: {self.numVertice()}")
-        print(f"Numero de arestas: {self.numEdge()}")
+        print(f"Numero de arestas: {self.numNode()}")
         print(f"Graus dos vertices: {self.numDegree()}")
         print(self.graphEuler())
 
@@ -16,9 +16,9 @@ class InfoGraph:
         return f'{self.graph}\n'
 
     # Numero de arestas
-    def numEdge(self):
-        edge = (self.graph.sum(axis=0).sum() / 2)
-        return edge
+    def numNode(self):
+        node = (self.graph.sum(axis=0).sum() / 2)
+        return node
 
     # Numero de vertices
     def numVertice(self):

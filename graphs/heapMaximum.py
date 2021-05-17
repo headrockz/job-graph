@@ -1,7 +1,7 @@
 import math
 
-class HeapMaximum:
 
+class HeapMaximum:
     def __init__(self):
         # Starting nodes of the maximum heap function
         self.nodes = 0
@@ -74,7 +74,7 @@ class HeapMaximum:
         return aux
 
     def view_heap(self):
-        #print(self.listHeap)
+        # print(self.listHeap)
 
         print('A estrutura heap é:')
 

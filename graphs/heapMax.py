@@ -1,5 +1,6 @@
 from math import log
 
+
 class HeapMax:
     def __init__(self):
         self.nodes = 0
@@ -34,7 +35,7 @@ class HeapMax:
             pass
 
     def view_heap(self):
-        #Forma simples de se mostrar a heap
+        # Forma simples de se mostrar a heap
         # print(self.listHeap)
 
         print('A estrutura heap é:')

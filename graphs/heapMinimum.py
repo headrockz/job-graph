@@ -1,7 +1,7 @@
 import math
 
-class HeapMinimum:
 
+class HeapMinimum:
     def __init__(self):
         # Starting nodes of the maximum heap function
         self.nodes = 0
