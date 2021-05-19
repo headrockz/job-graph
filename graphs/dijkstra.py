@@ -1,4 +1,4 @@
-from .heapMinimum import HeapMinimum
+from heapMinimum import HeapMinimum
 
 
 class AlgDijkstra:
