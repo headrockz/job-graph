@@ -77,9 +77,9 @@ def dijkstra_path(grafo, origem, fim): #retorna a menor distancia de um No orige
         for vizinho, peso in grafo[atual].items():
              pesoCalc = peso + noAtual[atual]
              if distanciaAtual[vizinho] == float("inf") or distanciaAtual[vizinho][0] > pesoCalc:
-                 distanciaAtual[vizinho] = [pesoCalc,atual]
-                 controle[vizinho] = pesoCalc
-                 print(controle)
+                distanciaAtual[vizinho] = [pesoCalc,atual]
+                controle[vizinho] = pesoCalc
+                print(controle)
                  
         if controle == {} : break    
         minVizinho = min(controle.items(), key=lambda x: x[1]) #seleciona o menor vizinho

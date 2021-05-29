@@ -8,4 +8,5 @@ lista = graph.values
 for i in range(len(lista)):
     # print('este é o I', i)
     for j in range(len(lista[i])):
-        print(f'i: {i}, j: {j}, peso: {lista[i][j]}')
+        if lista[i][j] != 0:
+            print(f'i: {i}, j: {j}, peso: {lista[i][j]}')

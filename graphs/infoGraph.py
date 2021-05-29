@@ -5,11 +5,11 @@ class InfoGraph:
     def __init__(self, graph):
         self.graph = graph
         
-        print(self.printGraph())
-        print(f"Numero de vertices: {self.numVertice()}")
-        print(f"Numero de arestas: {self.numNode()}")
-        print(f"Graus dos vertices: {self.numDegree()}")
-        print(self.graphEuler())
+        # print(self.printGraph())
+        # print(f"Numero de vertices: {self.numVertice()}")
+        # print(f"Numero de arestas: {self.numNode()}")
+        # print(f"Graus dos vertices: {self.numDegree()}")
+        # print(self.graphEuler())
 
     # Imprime o grafo
     def printGraph(self):
@@ -21,7 +21,7 @@ class InfoGraph:
         return node
 
     # Numero de vertices
-    def numVertice(self):
+    def numVertice(self) -> int:
         vertice = len(self.graph)
         return vertice
 

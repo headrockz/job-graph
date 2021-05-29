@@ -1,4 +1,4 @@
-from heapMinimum import HeapMinimum
+from .heapMinimum import HeapMinimum
 
 
 class AlgDijkstra:
@@ -7,7 +7,7 @@ class AlgDijkstra:
         self.vertices = vertices
         self.graph = [[0] * self.vertices for i in range(self.vertices)]
 
-    def add_egde(self, u, vertice, weight):
+    def add_edge(self, u, vertice, weight):
         self.graph[u - 1][vertice - 1] = weight
         self.graph[vertice - 1][u - 1] = weight
 

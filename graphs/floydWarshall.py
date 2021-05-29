@@ -2,7 +2,7 @@
 # Python Program for Floyd Warshall Algorithm
  
 # Number of vertices in the graph
-V = 4
+V = 7
  
 # Define infinity as the large
 # enough value. This value will be
@@ -84,10 +84,14 @@ def printSolution(dist):
        \|/         |
        (1)------->(2)
             3           """
-graph = [[0, 5, INF, 10],
-         [INF, 0, 3, INF],
-         [INF, INF, 0,   1],
-         [INF, INF, INF, 0]
+graph = [
+    [0,5,6,10,0,0,0],
+    [5,0,0,0,13,0,0],
+    [6,0,0,3,11,6,0],
+    [10,0,3,0,6,4,0],
+    [0,13,11,6,0,0,3],
+    [0,0,6,4,0,0,8],
+    [0,0,0,0,3,8,0],
          ]
 # Print the solution
 floydWarshall(graph)

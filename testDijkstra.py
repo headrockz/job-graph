@@ -130,3 +130,23 @@ for i in range(len(lista)):
 g.view_matrix()
 
 print(g.disjktra(1))
+
+
+# g = AlgDijkstra(7)
+
+# g.add_egde(0, 1, 5)
+# g.add_egde(0, 2, 6)
+# g.add_egde(0, 3, 10)
+# g.add_egde(1, 4, 13)
+# g.add_egde(2, 3, 3)
+# g.add_egde(2, 4, 11)
+# g.add_egde(2, 5, 6)
+# g.add_egde(3, 4, 6)
+# g.add_egde(3, 5, 4)
+# g.add_egde(4, 6, 3)
+# g.add_egde(5, 6, 8)
+
+# g.view_matrix()
+
+# resultado_dijkstra = g.disjktra(1)
+# print(resultado_dijkstra)
