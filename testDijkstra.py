@@ -83,6 +83,7 @@ class AlgDijkstra:
     def __init__(self, vertices):
         self.vertices = vertices
         self.graph = [[0] * self.vertices for i in range(self.vertices)]
+        
 
     def add_egde(self, u, vertice, weight):
         self.graph[u][vertice] = weight
@@ -93,12 +94,12 @@ class AlgDijkstra:
         for i in range(self.vertices):
             print(self.graph[i])
 
-    def disjktra(self, origin):
+    def disjktra(self, origin) -> None:
         # minus one represents infinite | Origin
-        result = [[-1, 0] for i in range(self.vertices)]
+        result = [[-1, 0, 0] for i in range(self.vertices)]
 
         # Add value the origin
-        result[origin - 1] = [0, origin]
+        result[origin - 1] = [0, origin, origin]
 
         # Starting heap minimum
         heapMinimum = HeapMinimum()
@@ -109,12 +110,17 @@ class AlgDijkstra:
         # Receiving the start heap, and verify which the minimum path
         while heapMinimum.size() > 0:
             distance, vertice = heapMinimum.remove_node()
+            # print(f'a distancia {distance} vertice {vertice}')
             for i in range(self.vertices):
                 if self.graph[vertice - 1][i] != 0:
                     if (result[i][0] == -1) or (result[i][0] > distance + self.graph[vertice - 1][i]):
-                        result[i] = [distance + self.graph[vertice - 1][i], vertice]
+                        result[i] = [distance + self.graph[vertice - 1][i], vertice, i+1]
+
                         heapMinimum.add_nodes(distance + self.graph[vertice - 1][i], i + 1)
-        return result
+
+        for k, v in enumerate(result):
+            print(f'saindo do vertice: {v[1]}, indo para vertice {v[2]}, o custo atual é: {v[0]}')
+        print(f'A menor distância é: {result[-1][0]}')
 
 
 g = AlgDijkstra(7)
@@ -127,26 +133,7 @@ for i in range(len(lista)):
         g.add_egde(i, j, lista[i][j])
 
 
-g.view_matrix()
-
-print(g.disjktra(1))
-
-
-# g = AlgDijkstra(7)
-
-# g.add_egde(0, 1, 5)
-# g.add_egde(0, 2, 6)
-# g.add_egde(0, 3, 10)
-# g.add_egde(1, 4, 13)
-# g.add_egde(2, 3, 3)
-# g.add_egde(2, 4, 11)
-# g.add_egde(2, 5, 6)
-# g.add_egde(3, 4, 6)
-# g.add_egde(3, 5, 4)
-# g.add_egde(4, 6, 3)
-# g.add_egde(5, 6, 8)
-
 # g.view_matrix()
 
-# resultado_dijkstra = g.disjktra(1)
-# print(resultado_dijkstra)
+g.disjktra(1)
+

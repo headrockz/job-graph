@@ -29,7 +29,10 @@ class HeapMinimum:
             father = child // 2
 
             # Father bigger than son; Stop
-            if self.listHeap[father - 1][0] <= self.listHeap[child - 1][0]:
+            # heap Maximo
+            # if self.listHeap[father - 1] >= self.listHeap[child - 1]: 
+            # heap Minimo
+            if self.listHeap[father - 1][0] <= self.listHeap[child - 1][0]: 
                 break
             # Father less than son; switch position
             else:
@@ -113,6 +116,7 @@ class HeapMinimum:
                 print(f'{self.listHeap[aux]}', end=' ')
                 aux = aux + 1
             print('')
+            
         for i in range(self.nodes - aux):
             print(f'{self.listHeap[aux]}', end=' ')
             aux = aux + 1

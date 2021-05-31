@@ -100,20 +100,3 @@ class HeapMaximum:
     #Mostra a tamanho da arvore
     def size(self):
         return self.nodes
-
-
-if __name__ == '__main__':
-    h = HeapMaximum()
-
-    h.add_nodes(17)
-    h.add_nodes(36)
-    h.add_nodes(25)
-    h.add_nodes(7)
-    h.add_nodes(3)
-    h.add_nodes(100)
-    h.add_nodes(1)
-    h.add_nodes(2)
-    h.add_nodes(19)
-
-    h.view_heap()
-    h.root()

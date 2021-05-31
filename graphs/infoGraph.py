@@ -1,41 +1,53 @@
-import numpy as np
-
-
 class InfoGraph:
     def __init__(self, graph):
         self.graph = graph
+        self.degree = list()
         
-        # print(self.printGraph())
-        # print(f"Numero de vertices: {self.numVertice()}")
-        # print(f"Numero de arestas: {self.numNode()}")
-        # print(f"Graus dos vertices: {self.numDegree()}")
-        # print(self.graphEuler())
 
     # Imprime o grafo
-    def printGraph(self):
-        return f'{self.graph}\n'
+    def print_graph(self) -> None:
+        for i in self.graph:
+            for j in i:
+                print(f'{j}', end=' ')
+            print()
+
+        print('=' * 50)
 
     # Numero de arestas
-    def numNode(self):
-        node = (self.graph.sum(axis=0).sum() / 2)
-        return node
+    def num_node(self) -> int:
+        node = 0
+
+        for i in self.graph:
+            for j in i:
+                if j != 0:
+                    node += 1
+
+        return round(node / 2)
 
     # Numero de vertices
-    def numVertice(self) -> int:
+    def num_vertice(self) -> int:
         vertice = len(self.graph)
         return vertice
 
     # Grau de cada vertice
-    def numDegree(self):
-        degree = self.graph.sum(axis=0)
-        return np.array(degree)
+    def num_degree(self) -> list:
+        cont = 0
+        for i in self.graph:
+            for j in i:
+                if j != 0:
+                    cont += 1
+
+            self.degree.append(cont)
+            cont = 0
+
+        return self.degree
+
 
     # Verifica se o grafo é euleriano ou unicursal
-    def graphEuler(self):
-        degree = self.graph.sum(axis=0)
+    def graph_euler(self) -> str:
         cont = 0
 
-        for d in degree:
+        for d in self.degree:
             if d % 2 != 0:
                 cont += 1
 
