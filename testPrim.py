@@ -41,15 +41,16 @@ class GraphPrim():
                         key[v] = self.graph[u][v]
                         parent[v] = u
   
-        self.printPrim(parent)
+        self.printMST(parent)
 
 if __name__ == "__main__":
-
+    
     lista = pd.read_csv("assets/graphEnter.csv", sep=';', header=0, engine='python')
 
     g = GraphPrim(11)
+    # print(lista)
     g.graph = lista.values
-    
+
     g.prim()
 
 
