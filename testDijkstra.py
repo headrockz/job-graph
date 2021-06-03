@@ -110,7 +110,7 @@ class AlgDijkstra:
         # Receiving the start heap, and verify which the minimum path
         while heapMinimum.size() > 0:
             distance, vertice = heapMinimum.remove_node()
-            # print(f'a distancia {distance} vertice {vertice}')
+            print(f'a distancia {distance} vertice {vertice}')
             for i in range(self.vertices):
                 if self.graph[vertice - 1][i] != 0:
                     if (result[i][0] == -1) or (result[i][0] > distance + self.graph[vertice - 1][i]):

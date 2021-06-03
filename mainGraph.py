@@ -24,7 +24,6 @@ def call_alg(alg, graph):
             for j in range(len(lista[i])):
                 g.add_edge(i, j, lista[i][j])
 
-        g.view_dijkstra()
         g.dijkstra(int(input("Digite o vertice de saida: ")))
         sleep(1)
     elif alg == '2':
