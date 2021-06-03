@@ -22,7 +22,6 @@ class AlgDijkstra:
 
         # Add value the origin
         result[origin - 1] = [0, origin, origin]
-        print(result)
 
         # Starting heap minimum
         heapMinimum = HeapMinimum()
@@ -33,7 +32,6 @@ class AlgDijkstra:
         # Receiving the start heap, and verify which the minimum path
         while heapMinimum.size() > 0:
             distance, vertice = heapMinimum.remove_node()
-            # print(f'a distancia {distance} vertice {vertice}')
             for i in range(self.vertices):
                 if self.graph[vertice - 1][i] != 0:
                     if (result[i][0] == -1) or (result[i][0] > distance + self.graph[vertice - 1][i]):
@@ -41,7 +39,7 @@ class AlgDijkstra:
 
                         heapMinimum.add_nodes(distance + self.graph[vertice - 1][i], i + 1)
 
-        print(result) 
+       
         for k, v in enumerate(result):
             print(f'saindo do vertice: {v[1]}, indo para vertice {v[2]}, o custo atual é: {v[0]}')
         print(f'A menor distância do vertice {result[0][1]} até o vertice {result[-1][2]} é: {result[-1][0]}')

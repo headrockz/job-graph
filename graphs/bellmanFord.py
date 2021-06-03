@@ -1,6 +1,3 @@
-# Bellman Ford Algorithm in Python
-import pandas as pd
-
 class BellmanFord:
 
     def __init__(self, vertices):
