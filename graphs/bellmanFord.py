@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 class BellmanFord:
 
     def __init__(self, vertices):
@@ -39,3 +42,16 @@ class BellmanFord:
         # No negative weight cycle found!
         # Print the distance and predecessor array
         self.print_solution(dist)
+
+
+if __name__ == "__main__":
+    graph = pd.read_csv("assets/graphEnter.csv", sep=';', header=0, engine='python')
+    lista = graph.values
+
+    g = BellmanFord(len(graph))
+
+    for i in range(len(lista)):
+        for j in range(len(lista[i])):
+            g.add_edge(i, j, lista[i][j])
+
+    g.bellman_ford(int(input("Digite o vertice de saida: "))) 

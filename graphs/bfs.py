@@ -1,4 +1,5 @@
 from typing import DefaultDict
+import pandas as pd
 
 
 class GraphBfs:
@@ -31,3 +32,17 @@ class GraphBfs:
                 if visited[i] == False:
                     listQueue.append(i)
                     visited[i] = True
+
+
+if __name__ == "__main__":
+    graph = pd.read_csv("assets/graphEnter.csv", sep=';', header=0, engine='python')
+    lista = graph.values
+    
+    g = GraphBfs()
+    
+    for i in range(len(lista)):
+        for j in range(len(lista[i])):
+            if lista[i][j] != 0:
+                g.add_edge(i, j)
+
+    g.BFS(int(input("Digite o vertice de saida: "))) 

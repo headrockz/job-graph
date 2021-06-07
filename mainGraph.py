@@ -44,9 +44,14 @@ def call_alg(alg, graph):
         g.BFS(int(input("Digite o vertice de saida: "))) 
         sleep(1)
     elif alg == '4':
+        g = GraphKrustal(aux.num_vertice())
+        lista = graph.values
+        for i in range(len(lista)):
+            for j in range(len(lista[i])):
+                g.add_edge(i, j, lista[i][j])
+    
+        g.kruskal()
         sleep(1)
-        # chama algoritmo(graph)
-        print('mostrando algoritmo 4')
     else:
         print('')
 
@@ -75,7 +80,7 @@ while True:
                     '[2] Grafo 2 - n3e2\n'
                     '[3] Grafo 3 - n4e5\n'
                     '[4] Grafo 4 - weight\n'
-                    '[5] Grafo 5 - Grafo que o usuario entrou\n'
+                    '[5] Grafo 5 - Grafo que o usuario entrou no arquivo graphEnter\n'
                     'Digite sua escolha: ')
 
     graph = choice_graph(choice)
