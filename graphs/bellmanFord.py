@@ -14,7 +14,7 @@ class BellmanFord:
 
     # Print the solution
     def print_solution(self, dist):
-        print("Vertice Distance from Source")
+        print("Vertice, distancia ate o vertice de saida")
         for i in range(self.V):
             print(f"{i}\t\t{dist[i]}")
 

@@ -1,54 +1,55 @@
 from time import sleep
 import pandas as pd
 from graphs.infoGraph import InfoGraph
-from graphs.dijkstra import AlgDijkstra
+from graphs.dijkstra import GraphDijkstra
 from graphs.bellmanFord import BellmanFord
 from graphs.bfs import GraphBfs
+from graphs.krustal import GraphKrustal
 
 
-# Função para formatar uma mensagem
 def massage(msg):
-    print('=' * 50)
-    print(f"{msg:^50}")
-    print('=' * 50)
+    print('=' * 62)
+    print(f"{msg:^62}")
+    print('=' * 62)
 
 
-
-# Função para escolher o algoritmo
 def call_alg(alg, graph):
-    lista = graph.values
+    graph = graph.values
     
     if alg == '1':
-        g = AlgDijkstra(aux.num_vertice())
-        for i in range(len(lista)):
-            for j in range(len(lista[i])):
-                g.add_edge(i, j, lista[i][j])
+        g = GraphDijkstra(aux.num_vertice())
+        for i in range(len(graph)):
+            for j in range(len(graph[i])):
+                g.add_edge(i, j, graph[i][j])
 
+        print('PS: lembre-se que nesse algoritmo pela implementação a matriz começa do 1 e NÃO do 0')
         g.dijkstra(int(input("Digite o vertice de saida: ")))
         sleep(1)
     elif alg == '2':
         g = BellmanFord(aux.num_vertice())
-        for i in range(len(lista)):
-            for j in range(len(lista[i])):
-                g.add_edge(i, j, lista[i][j])
+        for i in range(len(graph)):
+            for j in range(len(graph[i])):
+                g.add_edge(i, j, graph[i][j])
         
+        print('PS: lembre-se que nesse algoritmo pela implementação a matriz começa do 0')
         g.bellman_ford(int(input("Digite o vertice de saida: ")))     
         sleep(1)
     elif alg == '3':
         g = GraphBfs()
-        for i in range(len(lista)):
-            for j in range(len(lista[i])):
-                if lista[i][j] != 0:
+        for i in range(len(graph)):
+            for j in range(len(graph[i])):
+                if graph[i][j] != 0:
                     g.add_edge(i, j)
 
+        print('PS: lembre-se que nesse algoritmo pela implementação a matriz começa do 0')
         g.BFS(int(input("Digite o vertice de saida: "))) 
         sleep(1)
     elif alg == '4':
         g = GraphKrustal(aux.num_vertice())
-        lista = graph.values
-        for i in range(len(lista)):
-            for j in range(len(lista[i])):
-                g.add_edge(i, j, lista[i][j])
+
+        for i in range(len(graph)):
+            for j in range(len(graph[i])):
+                g.add_edge(i, j, graph[i][j])
     
         g.kruskal()
         sleep(1)
@@ -56,7 +57,6 @@ def call_alg(alg, graph):
         print('')
 
 
-# Finção para escolher o grafo
 def choice_graph(choice):
     if choice == '1':
         graph = pd.read_csv("assets/K5.csv", sep=';', header=0, engine='python')
@@ -72,8 +72,7 @@ def choice_graph(choice):
     
     return graph
 
-
-# Função principal
+   
 while True:
     massage('Escolha um Grafo')
     choice = input('[1] Grafo 1 - K5\n'
@@ -84,35 +83,35 @@ while True:
                     'Digite sua escolha: ')
 
     graph = choice_graph(choice)
-    
-    view = input('Visualizar grafo? [S/n]: ')
     aux = InfoGraph(graph.values)
     
-    if  view not in 'nN':
+    view = input('Visualizar grafo? [S/n]: ')
+    
+    if view in 'nN':
         massage('Matriz de Adjacências')
-        # Mostrando informações sobre o grafo    
+         
         aux.print_graph()
         print(f"Numero de vertices: {aux.num_vertice()}")
         print(f"Numero de arestas: {aux.num_node()}")
         print(f"Graus dos vertices: {aux.num_degree()}")
         print(aux.graph_euler())
     
-    outher = input('Deseja escolher outro grafo? [s/N]: ')
-    if outher not in 'sS':
-        break
+        outher = input('Deseja escolher outro grafo? [s/N]: ')
+        if outher in 'sS':
+            break
 
 while True:
     massage('Escolha um Algoritmo')
     alg = input('[1] dijkstra\n'
                 '[2] bellman ford\n'
-                '[3] bfs\n'
-                '[4] algoritmo 4\n'
+                '[3] BFS\n'
+                '[4] Krustal\n'
                 '[0/N] Para sair\n'
                 'Digite sua escolha: ')
 
     print('')
     call_alg(alg, graph)
     
-    if alg == '0' or alg.lower() == 'n':
+    if alg == '0' or alg in 'nN':
         massage('Volte sempre!')
         break

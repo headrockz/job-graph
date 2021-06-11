@@ -6,9 +6,11 @@ class InfoGraph:
 
     # Imprime o grafo
     def print_graph(self) -> None:
+
         for i in self.graph:
             for j in i:
                 print(f'{j}', end=' ')
+            
             print()
 
         print('=' * 50)

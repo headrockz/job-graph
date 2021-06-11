@@ -41,7 +41,7 @@ class GraphPrim():
                         key[v] = self.graph[u][v]
                         parent[v] = u
   
-        self.printMST(parent)
+        self.printPrim(parent)
 
 if __name__ == "__main__":
     

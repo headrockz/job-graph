@@ -5,11 +5,7 @@ def dfs(graph, start, visited=None):
         visited = set()
     visited.add(start)
 
-    # print(visited)
-    # print(start)
-
     for next in graph[start] - visited:
-        print(graph[start]- visited)
         dfs(graph, next, visited)
     return visited
 
@@ -20,11 +16,6 @@ graph = {'0': set(['1', '2']),
          '3': set(['1']),
          '4': set(['2', '3'])}
 
-n4e5 = [
-        [0, 1, 1, 0],
-        [1, 0, 1, 1],
-        [1, 1, 0, 1],
-        [0, 1, 1, 0],
-]
 
-dfs(graph, '0')
+
+print(dfs(graph, '0'))

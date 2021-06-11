@@ -9,7 +9,7 @@ from .heapMinimum import HeapMinimum
 import pandas as pd
 
 
-class AlgDijkstra:
+class GraphDijkstra:
 
     def __init__(self, vertices):
         self.vertices = vertices
@@ -62,9 +62,9 @@ if __name__ == "__main__":
 
     for i in range(len(lista)):
         for j in range(len(lista[i])):
-            g.add_egde(i, j, lista[i][j])
+            g.add_edge(i, j, lista[i][j])
 
 
-    g.view_matrix()
-
-    g.disjktra(int(input("Digite o vertice de saida: ")))
+    g.view_dijkstra()
+    print('PS: lembre-se que nesse algoritmo pela implementação a matriz começa do 1 e NÃO do 0')
+    g.dijkstra(int(input("Digite o vertice de saida: ")))
