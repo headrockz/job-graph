@@ -4,22 +4,18 @@ import pandas as pd
 
 class GraphBfs:
     def __init__(self):
-        # Create list start cod
         self.graph = DefaultDict(list)
 
-    #function add the node in graph
+
     def add_edge(self, index, vertex):
         self.graph[index].append(vertex)
 
-    #function of print bfs | add primary node visited
+
     def BFS(self, node):
-        #vertex not viseted add false
         visited = [False] * (len(self.graph))
 
-        #created list empty of graph bfs
         listQueue = []
 
-        #add node visited in stack
         listQueue.append(node)
         visited[node] = True
 
@@ -47,4 +43,5 @@ if __name__ == "__main__":
             if lista[i][j] != 0:
                 g.add_edge(i, j)
 
+    print('PS: lembre-se que nesse algoritmo pela implementação a matriz começa do 0')
     g.BFS(int(input("Digite o vertice de saida: "))) 

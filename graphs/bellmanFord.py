@@ -51,4 +51,5 @@ if __name__ == "__main__":
         for j in range(len(lista[i])):
             g.add_edge(i, j, lista[i][j])
 
+    print('PS: lembre-se que nesse algoritmo pela implementação a matriz começa do 0')
     g.bellman_ford(int(input("Digite o vertice de saida: "))) 

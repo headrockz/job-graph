@@ -5,3 +5,4 @@ bin/
 *.class
 .Rhistory
 *__pycache__*
+graphs2/

@@ -13,8 +13,8 @@ pip install -r requirements.txt
 
 ```bash
 ├── assets
-│   └── graphEnter.csv # Arquivo para entrar com seus grafos
-│   └── K5.csv
+│   └── graphEnter.csv   # Arquivo para entrar com seus grafos
+│   └── K5.csv          
 │   └── n3e2.csv
 │   └── n4e5.csv
 │   └── weight.csv
@@ -23,8 +23,8 @@ pip install -r requirements.txt
 │   └── bfs.py
 │   └── dijkstra.py
 │   └── kruskal.py
-│   └── headMinimum.py # Algoritmo necessário para o algoritmo de dijkstra funcionar
-│   └── infoGraph.py
+│   └── headMinimum.py  # Algoritmo necessário para o algoritmo de dijkstra funcionar
+│   └── infoGraph.py    # Arquivo com algumas informações basicas do grafo, só é utilizado no mainGraph.py
 ├── README.md
 └── mainGraph.py
 └── requeriments.txt # Arquivo com os pacotes utilizados
