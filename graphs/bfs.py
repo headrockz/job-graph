@@ -3,7 +3,6 @@ import pandas as pd
 
 
 class GraphBfs:
-    
     def __init__(self):
         # Create list start cod
         self.graph = DefaultDict(list)
@@ -35,6 +34,9 @@ class GraphBfs:
 
 
 if __name__ == "__main__":
+    # Area de teste do algorimo
+
+    # Entre com seu grafo no arquivo graphEnter.csv
     graph = pd.read_csv("assets/graphEnter.csv", sep=';', header=0, engine='python')
     lista = graph.values
     

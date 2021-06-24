@@ -57,12 +57,13 @@ class Graph:
         return max_flow
 
 
+if __name__ == "__main__":
+    
+    graph = pd.read_csv("assets/graphEnter.csv", sep=';', header=0, engine='python')    
+    lista = graph.values
 
-graph = pd.read_csv("assets/graphEnter.csv", sep=';', header=0, engine='python')    
-lista = graph.values
+    g = Graph(lista)
 
-g = Graph(lista)
+    source = 0
 
-source = 0
-
-print(f"Max Flow: {g.ford_fulkerson(source, len(lista)-1)}")
+    print(f"Max Flow: {g.ford_fulkerson(source, len(lista)-1)}")

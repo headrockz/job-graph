@@ -52,11 +52,14 @@ class GraphKrustal:
 
 
 if __name__ == "__main__":
+    # Area de teste do algorimo
 
+    # Entre com seu grafo no arquivo graphEnter.csv
     graph = pd.read_csv("assets/graphEnter.csv", sep=';', header=0, engine='python')
-
-    g = GraphKrustal(11)
     lista = graph.values
+
+    g = GraphKrustal(len(graph))
+    
     for i in range(len(lista)):
         for j in range(len(lista[i])):
             g.add_edge(i, j, lista[i][j])

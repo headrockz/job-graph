@@ -54,11 +54,13 @@ class GraphDijkstra:
 
 
 if __name__ == "__main__":
+    # Area de teste do algorimo
+
+    # Entre com seu grafo no arquivo graphEnter.csv
     graph = pd.read_csv("assets/graphEnter.csv", sep=';', header=0, engine='python')
     lista = graph.values
     
-    g = AlgDijkstra(len(graph))
-
+    g = GraphDijkstra(len(graph))
 
     for i in range(len(lista)):
         for j in range(len(lista[i])):
